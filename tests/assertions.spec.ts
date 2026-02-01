@@ -7,27 +7,22 @@ test.beforeEach(async ({ page }) => {
 });
 
 
-test('extacting the value from the locator', async ({ page }) => {
-    //single test value
-      const basicForm = page.locator('nb-card').filter({hasText: 'Basic form'});
-      const submitButton = await basicForm.getByRole('button').textContent();
+test('assertions', async ({ page }) => {
+    const basicForm = page.locator('nb-card').filter({ hasText: 'Basic form' });
+    const submitButton = basicForm.getByRole('button');
+    //General assertions
+    const value = 5
+    expect(value).toEqual(5);
 
-      expect(submitButton).toEqual('Submit');
+    const submitText = await submitButton.textContent();
+    expect(submitText).toEqual('Submit')
 
-      //all text values
-      const allRadioButtonLabels = await page.locator('nb-radio').allTextContents();
-      expect(allRadioButtonLabels).toContain('Option 1');
-   
-      //input value
-      const emailField = basicForm.getByRole('textbox', {name: "Email"});
-      await emailField.fill('test@test.com');
-      const emailValue = await emailField.inputValue();
-      expect(emailValue).toEqual('test@test.com')
+    //Locator Assertions - This is a locator assertion and requires await
+    await expect(submitButton).toHaveText('Submit')
 
-    //attribute value
-    const placeholderValue = await emailField.getAttribute('placeholder');
-    expect(placeholderValue).toEqual('Email');
+    //Soft Assertions - A kind of assertion when the test can be continue the execition even if the assertion is failed.
+    await expect.soft(submitButton).toHaveText('Submit5');
+    await basicForm.click();
 
 
-  
 });

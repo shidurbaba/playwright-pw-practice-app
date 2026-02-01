@@ -1,0 +1,65 @@
+Promise is a type of JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+Here, we are using the 'await' keyword to wait for the page to load completely before proceeding with any further actions.
+await using the keyword asynchronously waits for the Promise returned by page.goto() to resolve.
+
+
+So playwright has four hooks that you can use 
+1. before each 
+2. after each 
+3. before all
+4. after all
+These hooks are useful for setting up preconditions and cleaning up after tests.
+
+When you group your test by the test suites using describe, you can skip them independently by using the .skip method.
+For example:
+describe.skip('My Test Suite', () => {
+  // tests go here
+});
+This will skip all tests within the 'My Test Suite' describe block.
+
+In Playwright, you can also use test.only to run a specific test or test suite exclusively. This is useful for debugging or focusing on a particular test without running the entire suite.
+For example:
+test.only('My Exclusive Test', async ({ page }) => {
+  // test code goes here
+});
+
+    //1. Locate by tag name - locate by tag name will return all the web elements with the given tag name
+    await page.locator('input').first().click(); //this will click on the first input field on the page
+
+    //2. Locate by id - locate by id will return a single web element with the given id
+    await page.locator('#inputEmail1').click();
+
+    //3. Locate by class value - locate by class value will return all web elements with the given class value
+    page.locator('.shape-rectangle');
+
+    //4. Locate by attribute - you can locate elements by attribute using
+     playwright will all web elements with attribute value [] 
+    page.locator('[placeholder="Email"]');
+
+    //5. By Full Class Value - locate by full class value will return all web elements with the given full class value
+    page.locator('[class="input-full-width size-medium status-basic shape-rectangle nb-transition"]');
+
+    //6. Combine different selectors - you can combine different selectors to narrow down your search
+    page.locator('input[placeholder="Email"].shape-rectangle');
+
+    //7. Xpath locator (No recommend to use it) - you can use xpath to locate elements as well
+    page.locator('//input[@id="inputEmail1"]');
+
+    //8. Partial Text Match - you can locate elements by partial text match using :text() selector
+    page.locator(':text("Using")')
+
+    //9. Exact Text Match - you can locate elements by exact text match using :text-is() selector
+    page.locator(':text-is("Using the Grid")')
+
+
+    first() - This method is used to select the first element from a list of matched elements.
+    last() - This method is used to select the last element from a list of matched elements
+    nth(index) - This method is used to select the element at the specified index from a list of matched elements. The index is zero-based.
+
+    has - This method is used to filter elements that contain a specific child element.
+    For example:
+    await page.locator('nb-card', {has: page.locator('#inputEmail1')} ).getByRole('textbox', {name: 'Email'}).click();
+
+    hasText - This method is used to filter elements that contain specific text.
+    For example:
+    await page.locator('nb-card', {hasText: 'Using the Grid'}).getByRole('textbox', {name: 'Email'}).click();

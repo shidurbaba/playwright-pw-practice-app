@@ -1,0 +1,9 @@
+Playwright Terminal Commands
+
+1. npx playwright test --ui (Launch Playwright Test Runner UI)
+2. npx playwright test --headed (Run tests with the browser UI visible)
+3. npx playwright test --project=chromium (Run tests specifically on Chromium browser)
+4. npx playwright test --project=firefox (Run tests specifically on Firefox browser)
+5. npx playwright test --project=webkit (Run tests specifically on WebKit browser)
+6. npx playwright test --g "test name" (Run tests that match the specified name or pattern)
+7. npx playwright test --codegen (Generate code for user actions in the browser)

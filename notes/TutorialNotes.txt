@@ -63,3 +63,27 @@ test.only('My Exclusive Test', async ({ page }) => {
     hasText - This method is used to filter elements that contain specific text.
     For example:
     await page.locator('nb-card', {hasText: 'Using the Grid'}).getByRole('textbox', {name: 'Email'}).click();
+
+Radio Button
+ await usingTheGridForm.getByLabel('Option 1').check({force: true})
+The check() method is used to select a radio button or checkbox.
+The {force: true} option is used to force the action even if the element is not visible or not enabled.
+Example class='native-input visually-hidden' is a common class for hidden radio buttons or checkboxes, and using {force: true} allows you to interact with them regardless of their visibility.
+     
+await usingTheGridForm.getByRole('radio', {name: "Option 2"}).check({force: true}) //Another option to check the radiobutton
+
+How to validate if our selection was successful?
+const radioStatus = await usingTheGridForm.getByRole('radio', {name: "Option 2"}).isChecked()
+isChecked() method is used to check if a radio button or checkbox is selected.
+expect(radioStatus).toBeTruthy();
+toBeTruthy() method is used to assert that the value is true.
+
+//How to validate using locator?
+await expect(usingTheGridForm.getByRole('radio', {name: "Option 2"})).toBeChecked()
+toBeChecked() method is used to assert that the radio button or checkbox is selected.
+
+//How to check if Option 1 is not checked without creating a new constant?
+expect(await usingTheGridForm.getByRole('radio', {name: "Option 1"}).isChecked()).toBeFalsy()
+tobeFalsy() method is used to assert that the value is false.
+
+Checkbox

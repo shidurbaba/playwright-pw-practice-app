@@ -87,3 +87,18 @@ expect(await usingTheGridForm.getByRole('radio', {name: "Option 1"}).isChecked()
 tobeFalsy() method is used to assert that the value is false.
 
 Checkbox
+wait page.getByRole('checkbox', { name: "Hide on click" }).check({ force: true })
+//check () - if the checkbox already checked it will not unselect this checkbox, while click command just performs the click and doesn't validate.
+await page.getByRole('checkbox', { name: "Hide on click" }).uncheck({ force: true })
+await page.getByRole('checkbox', { name: "Prevent arising of duplicate toast" }).check({ force: true })
+
+const allBoxes = page.getByRole('checkbox')
+
+for (const box of await allBoxes.all()) {
+  .all - This method is used to retrieve all elements that match the locator and returns them as an array of ElementHandle objects.
+    await box.check({ force: true })
+    expect(await box.isChecked()).toBeTruthy()
+
+    //await box.uncheck({force: true})
+    //expect(await box.isChecked()).toBeFalsy()
+        }

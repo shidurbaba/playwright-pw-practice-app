@@ -133,3 +133,15 @@ After that, you can use the getByRole() method again to locate the tooltip eleme
 
   const tooltipCard = page.locator('nb-card',{hasText: "Tooltip Placements"})
   await tooltipCard.getByRole('button', {name: "Top"}).hover()
+
+Dialog Boxes
+ //This is a listener - When a dialog box is not a web element on the page, but rather a browser-level dialog, you can use the 'dialog' event listener to handle it. 
+   This allows you to interact with the dialog box, such as accepting or dismissing it, and also to validate its message.
+        page.on('dialog', dialog =>
+            {
+                expect(dialog.message()).toEqual('Are you sure you want to delete?')
+                dialog.accept();
+            })
+
+        await page.getByRole('table').locator('tr', {hasText: "mdo@gmail.com"}).locator('.nb-trash').click();
+        await expect(page.locator('table tr').first()).not.toHaveText('mdo@gmail.com')   

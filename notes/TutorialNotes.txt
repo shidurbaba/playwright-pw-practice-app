@@ -101,4 +101,35 @@ for (const box of await allBoxes.all()) {
 
     //await box.uncheck({force: true})
     //expect(await box.isChecked()).toBeFalsy()
+    isChecked() method is used to check if a checkbox is selected.
+    toBeTruthy() method is used to assert that the value is true.
         }
+
+Lists and Dropdowns
+   page.getByRole('list') - This method is used to locate an element with the role of 'list'. It will return the first element that matches this role.
+   page.getByRole('listitem') - This method is used to locate elements with the role of 'listitem'. It will return all elements that match this role.
+
+        const colors = { - const colors is an object that contains key-value pairs where the keys are the names of the color options in the dropdown menu and the values are the corresponding RGB color values. This object is used to store the expected background color values for each color option in the dropdown menu.
+            "Light": "rgb(255, 255, 255)",
+            "Dark": "rgb(34, 43, 69)",
+            "Cosmic": "rgb(50, 50, 89)",
+            "Corporate": "rgb(255, 255, 255)"
+        }
+
+        //Create for in loop
+        await dropdownMenu.click(); //open the dropdown
+        for (const color in colors) {
+          // in - This is a JavaScript keyword used to iterate over the properties of an object. In this case, it is used to iterate over the keys of the 'colors' object, which represent the different color options in the dropdown menu.
+            await optionList.filter({ hasText: color }).click() - This line of code is used to select a specific option from the dropdown menu based on the color name. The filter() method is used to narrow down the list of options to those that contain the specified text (color), and then click() is called to select that option.
+            await expect(header).toHaveCSS('background-color', colors[color]) - This line of code is used to assert that the background color of the header element matches the expected color value from the 'colors' object. The toHaveCSS() method is used to check if the header element has the specified CSS property ('background-color') with the expected value (colors[color]).
+            if(color != 'Corporate')
+            await dropdownMenu.click(); //open the dropdown again
+
+        }
+
+Tooltips
+To validate the tooltip text, you can use the getByRole() method to locate the element that triggers the tooltip and then use the hover() method to simulate hovering over that element. 
+After that, you can use the getByRole() method again to locate the tooltip element and assert its text content.
+
+  const tooltipCard = page.locator('nb-card',{hasText: "Tooltip Placements"})
+  await tooltipCard.getByRole('button', {name: "Top"}).hover()

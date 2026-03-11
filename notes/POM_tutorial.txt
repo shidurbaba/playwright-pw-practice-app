@@ -1,0 +1,14 @@
+POM - Page Object Model
+
+Page Object Model (POM) is a design pattern in Selenium that creates an object repository for web UI elements. It helps to reduce code duplication and improves test maintenance. In POM, each web page is represented as a class, and the various elements on the page are defined as variables in the class. The actions that can be performed on those elements are defined as methods in the class.
+Note: There is no industry implementation standard for POM, and it can be implemented in various ways depending on the project requirements and team preferences. The key idea is to create a clear separation between the test code and the page-specific code, making it easier to maintain and scale the test suite.
+
+
+Two Important Principles of POM:
+1. DRY - Don't Repeat Yourself : Reduce code duplication by creating reusable methods for common actions on the page.
+2. KISS - Keep It Simple Stupid : Keep the page object classes simple and focused on representing the page elements and actions, avoiding unnecessary complexity.
+Make your framework just enough to be efficient what's suppose to do.
+
+Two useful practice to follow when implementing POM:
+1. Descriptive naming conventions: Use clear and descriptive names for your page object classes, variables, and methods to enhance readability and maintainability.
+2. Avoid tiny methods.

@@ -12,7 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 10000,
+  timeout: 20000,
   globalTimeout: 60000,
   expect:{ timeout: 5000},
   testDir: './tests',
@@ -32,7 +32,7 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    headless: true,
+    headless: false,
     trace: 'on-first-retry',
     //actionTimeout: 5000,
     //navigationTimeout: 5000

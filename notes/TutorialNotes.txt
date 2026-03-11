@@ -145,3 +145,12 @@ Dialog Boxes
 
         await page.getByRole('table').locator('tr', {hasText: "mdo@gmail.com"}).locator('.nb-trash').click();
         await expect(page.locator('table tr').first()).not.toHaveText('mdo@gmail.com')   
+
+
+Drag and Drop
+In order to interact with the iframe, you need to switch to this iframe first, providing a frame locator of this iframe.
+Then using this frame locator, you can find the locators within the iframe and work as usual.
+If you want to perform drag and drop on the web page, use a drag to method and provide the locator
+where you want to drop the element.
+If you want to perform more precise control over the drag and drop, you can use a mouse.
+Movements using methods hover up and down to perform drag and drop.

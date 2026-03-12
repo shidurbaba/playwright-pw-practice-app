@@ -12,3 +12,12 @@ Make your framework just enough to be efficient what's suppose to do.
 Two useful practice to follow when implementing POM:
 1. Descriptive naming conventions: Use clear and descriptive names for your page object classes, variables, and methods to enhance readability and maintainability.
 2. Avoid tiny methods.
+
+
+
+Test Framework Architecture with POM:
+1. Test Area - userPageObject.spec.ts, testSuite1.spec.ts, testSuite2.spec.ts
+2. Code Area - POM Classes(NavigationPage.ts, FormLayoutsPage.ts, DateppickerPage.ts), PageManager, HelperBase
+
+
+(Test Area) <---- PageManager <---- POM Classes <---- HelperBase

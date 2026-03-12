@@ -1,15 +1,13 @@
 import { Locator, Page } from "@playwright/test"
+import { HelperBase } from "./helperBase"
 
 
 
-export class FormLayoutPage {
-
-    readonly page: Page //This is a field
-
+export class FormLayoutPage extends HelperBase {
 
     constructor(page: Page) //Our constructor expects a page parameter (fixture) to be passed inside of this class.
     {
-        this.page = page // Assign it to the local field.
+        super(page) // Assign it to the local field.
 
     }
 

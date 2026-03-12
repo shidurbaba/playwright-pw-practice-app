@@ -1,16 +1,14 @@
 import { Page, expect } from "@playwright/test"
+import { HelperBase } from "./helperBase"
 
 
 
-export class DatePickerPage {
-
-    private readonly page: Page //This is a field
+export class DatePickerPage extends HelperBase {
 
 
     constructor(page: Page) //Our constructor expects a page parameter (fixture) to be passed inside of this class.
     {
-        this.page = page // Assign it to the local field.
-
+       super(page)
     }
 
     /**

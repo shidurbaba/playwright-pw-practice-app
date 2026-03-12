@@ -17,16 +17,26 @@ export class PageManager {
         this.datePickerPage = new DatePickerPage(this.page)
     }
 
+    /**
+     * 
+     * @returns - navigationPage object
+     */
     navigateTo()
     {
         return this.navigationPage
     }
-
+    /**
+     * 
+     * @returns - formLayoutPage object
+     */
     onformLayoutsPage()
     {
         return this.formLayoutPage
     }
-
+    /**
+     * 
+     * @returns - datePickerPage object
+     */
     onDatePickerPage()
     {
         return this.datePickerPage

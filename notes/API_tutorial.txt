@@ -1,0 +1,25 @@
+API
+
+API - Application Programming Interface. It is a kind of a black box that we can interact with, sending different requests to the endpoints and getting responses.
+
+Types of API:
+1. Get
+2. Post
+3. Put
+4. Delete
+
+API URL - Https URL to API. Usually called API endpoint.
+Headers - Usually it's Content-Type or Authorization. It is used to send some additional information to the server.
+Body - It is used to send some data to the server. It is used in Post and Put requests.
+
+Response Type - 2XX - Success => 200 OK, 201 Created
+Response Type - 4XX - Client Error => 400 Bad Request, 401 Unauthorized,
+Response Type - 3XX - Redirection => 301 Moved Permanently, 302 Found
+Response Type - 5XX - Server Error => 500 Internal Server Error, 502 Bad Gateway
+
+UI Automation - Playwright Mocking - It is a technique used to simulate the behavior of an API. It is used to test the UI without actually calling the API.
+It is used to test the UI in isolation. The disadvantage of this technique is that you are breaking the actual integration test and if your API server will have a change, your test will not catch this change.
+
+Direct API Call - It is a technique used to test the API directly. It is used to test the API in isolation. 
+The advantage of this technique is that you are testing the actual integration and if your API server will have a change, your test will catch this change. 
+The disadvantage of this technique is that you are not testing the UI and if your UI will have a change, your test will not catch this change. 

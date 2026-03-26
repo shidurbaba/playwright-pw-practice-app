@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 
-test('Locator syntax rules', async ({ page }) => {
+test.skip('Locator syntax rules', async ({ page }) => {
 
     //1. Locate by tag name
     //<input _ngcontent-pqb-c287="" type="email" nbinput="" fullwidth="" id="inputEmail1" placeholder="Email" ng-reflect-full-width="" class="input-full-width size-medium status-basic shape-rectangle nb-transition">

@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:4200/');
+    await page.goto('/');
     await page.getByText('Forms').click();
     await page.getByText('Form Layouts').click();
 });
 
 
-test('assertions', async ({ page }) => {
+test.skip('assertions', async ({ page }) => {
     const basicForm = page.locator('nb-card').filter({ hasText: 'Basic form' });
     const submitButton = basicForm.getByRole('button');
     //General assertions

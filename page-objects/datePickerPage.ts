@@ -50,6 +50,7 @@ export class DatePickerPage extends HelperBase {
         const expectedMonthAndYear = `${expectedMonthLong} ${expectedYear}`
 
         while (!calendarMonthAndYear.includes(expectedMonthAndYear)) {
+            await this.page.waitForTimeout(1000)
             await this.page.locator('nb-calendar-pageable-navigation [date-name="chevron-right"]').click()
             let calendarMonthAndYear = await this.page.locator('nb-calendar-view-mode').textContent();
 

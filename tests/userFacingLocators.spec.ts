@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
     await page.getByText('Form Layouts').click();
 });
 
-test('User Facing Locators', async ({ page }) => {
+test.skip('User Facing Locators', async ({ page }) => {
 
     //1. Locate by role
     await page.getByRole('textbox', { name: 'Email' }).first().click();

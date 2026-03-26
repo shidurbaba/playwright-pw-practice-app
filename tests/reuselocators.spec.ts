@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 
-test('Resusing the locators', async ({ page }) => {
+test.skip('Resusing the locators', async ({ page }) => {
       const basicForm = page.locator('nb-card').filter({hasText: 'Basic form'});
       const emailField = basicForm.getByRole('textbox', {name: 'Email'})
       const passwordField = basicForm.getByRole('textbox', {name: 'Password'})

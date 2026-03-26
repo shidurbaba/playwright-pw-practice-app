@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { using } from 'rxjs';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:4200/');
+    await page.goto('/');
 
 });
 

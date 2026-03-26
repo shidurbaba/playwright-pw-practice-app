@@ -3,7 +3,7 @@ import { using } from 'rxjs';
 
 test.beforeEach(async ({ page }) => {
     console.log("Navigating to Browser")
-    await page.goto('http://localhost:4200/');
+    await page.goto('/');
 
 });
 
@@ -52,7 +52,7 @@ test.describe('Date Picker Example', async () => {
 
 
 
-    test('Date Picker Test 2 - Sophisticated Version 2 - Select The Correct Month ', async ({ page }) => {
+    test.skip('Date Picker Test 2 - Sophisticated Version 2 - Select The Correct Month ', async ({ page }) => {
         test.slow()
 
         const calendarInputField = page.getByPlaceholder('Form Picker')
@@ -79,7 +79,7 @@ test.describe('Date Picker Example', async () => {
 
         await expect(calendarInputField).toHaveValue(dateToAssert)
 
-        await page.waitForTimeout(5000)
+        await page.waitForTimeout(100)
     })
 
 

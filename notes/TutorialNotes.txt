@@ -163,3 +163,7 @@ npx playwright test --parallel
 
 Retry Failed Tests:
 When you want to override the default retry behavrior use - test.describe.configure({retries:2}) under test.describe block. This will retry the failed test 2 times before marking it as failed.
+
+Test Fixtures
+Similar before and afer hook, but way more powerful.
+Test fixtures, you can group tests based on their meaning instead of their common setup. It is

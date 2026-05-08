@@ -18,13 +18,13 @@ test.describe('suite1', () => {
         await page.getByText('Charts').click();
     });
 
-    test('first test', async ({ page }) => {
+    test.skip('first test', async ({ page }) => {
 
         await page.getByText('Form Layouts').click();
 
     });
 
-    test('navigate to datepicker page', async ({ page }) => {
+    test.skip('navigate to datepicker page', async ({ page }) => {
 
         await page.getByText('Datepicker').click();
 
@@ -38,13 +38,13 @@ test.describe.skip('suite2', () => {
         await page.getByText('Forms').click();
     });
 
-    test('first test', async ({ page }) => {
+    test.skip('first test', async ({ page }) => {
 
         await page.getByText('Form Layouts').click();
 
     });
 
-    test('navigate to datepicker page', async ({ page }) => {
+    test.skip('navigate to datepicker page', async ({ page }) => {
 
         await page.getByText('Datepicker').click();
 

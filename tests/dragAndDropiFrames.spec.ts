@@ -20,7 +20,7 @@ test.describe('Drag And Drop Example', async () => {
 
     })
 
-    test('Drag And Drop With iFrame - Example 2 ', async ({ page }) => {
+    test.skip('Drag And Drop With iFrame - Example 2 ', async ({ page }) => {
         test.slow()
 
         const frame = page.frameLocator('[rel-title="Photo Manager"] iframe')

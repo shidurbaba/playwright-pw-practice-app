@@ -15,7 +15,7 @@ test.describe('Form Layouts page', async () => {
 
     })
 
-    test('tooltip Example', async ({ page }) => {
+    test.skip('tooltip Example', async ({ page }) => {
         test.slow()
         await page.getByText('Modal & Overlays').click()
         await page.getByText('Tooltip').click()

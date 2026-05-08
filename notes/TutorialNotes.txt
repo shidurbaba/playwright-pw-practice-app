@@ -154,3 +154,16 @@ If you want to perform drag and drop on the web page, use a drag to method and p
 where you want to drop the element.
 If you want to perform more precise control over the drag and drop, you can use a mouse.
 Movements using methods hover up and down to perform drag and drop.
+
+Sequential and Parallel Execution of Tests
+By default, Playwright runs tests sequentially. However, you can run tests in parallel to speed up the execution time. To run tests in parallel, you can use the --parallel flag when running the tests. For example:
+npx playwright test --parallel
+"pageObjects-parallel": "npx playwright test inputFields._assertions.spec.ts --project=chromium & npx playwright test radiobutton.spec.ts --project=firefox",
+"pageObjects-all": "npx playwright test inputFields._assertions.spec.ts --project=chromium && npx playwright test radiobutton.spec.ts --project=firefox"
+
+Retry Failed Tests:
+When you want to override the default retry behavrior use - test.describe.configure({retries:2}) under test.describe block. This will retry the failed test 2 times before marking it as failed.
+
+Test Fixtures
+Similar before and afer hook, but way more powerful.
+Test fixtures, you can group tests based on their meaning instead of their common setup. It is
